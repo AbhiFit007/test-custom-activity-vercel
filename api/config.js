@@ -26,7 +26,7 @@ export default function handler(req, res) {
       }
     },
     configurationArguments: {
-      applicationExtensionKey: "4711188c-e459-41bf-b1bc-197f35b1da51",
+      applicationExtensionKey: "6ede0c69-f2d1-4058-9583-a3955f2dcc9f",
       validate: {
         url: "https://webhook.site/d9ce391e-0752-4d0c-9988-df1c975ab4db",
         verb: "POST"
