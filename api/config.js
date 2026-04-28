@@ -1,5 +1,5 @@
 export default function handler(req, res) {
-  res.status(200).json({
+  return res.status(200).json({
     workflowApiVersion: "1.1",
     type: "REST",
     metaData: {
@@ -8,47 +8,30 @@ export default function handler(req, res) {
     },
     lang: {
       "en-US": {
-        name: "Test Custom Activity",
-        description: "Testing Custom Activity via Webhook"
+        name: "Test Activity",
+        description: "Test"
       }
     },
     arguments: {
       execute: {
-        url: "https://webhook.site/d9ce391e-0752-4d0c-9988-df1c975ab4db",
-        verb: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: {
-          mobile: "{{Contact.Default.MobileNumber}}",
-          name: "{{Contact.Default.FirstName}}"
-        }
+        url: "https://test-custom-activity-vercel.vercel.app/api/config",
+        verb: "POST"
       }
     },
     configurationArguments: {
       applicationExtensionKey: "6ede0c69-f2d1-4058-9583-a3955f2dcc9f",
-      validate: {
-        url: "https://webhook.site/d9ce391e-0752-4d0c-9988-df1c975ab4db",
-        verb: "POST"
-      },
       publish: {
-        url: "https://webhook.site/d9ce391e-0752-4d0c-9988-df1c975ab4db",
-        verb: "POST"
+        url: "https://test-custom-activity-vercel.vercel.app/api/config"
+      },
+      validate: {
+        url: "https://test-custom-activity-vercel.vercel.app/api/config"
       }
     },
     userInterfaces: {
       configModal: {
-        height: 300,
-        width: 400,
-        url: "https://abhifit007.github.io/Test-Custom-Activity/index.html"
-      }
-    },
-    schema: {
-      arguments: {
-        execute: {
-          inArguments: [],
-          outArguments: []
-        }
+        height: 200,
+        width: 300,
+        url: "https://example.com"
       }
     }
   });
